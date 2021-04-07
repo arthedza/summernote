@@ -33,7 +33,7 @@ module.exports = {
     jquery: 'jQuery', // dev includes jQuery by <script> tag
   },
   devServer: {
-    port: 3000,
+    port: 9000,
     contentBase: ['./dist'],
   },
   module: {
