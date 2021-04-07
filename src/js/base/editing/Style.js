@@ -32,7 +32,9 @@ export default class Style {
    * @return {Object}
    */
   fromNode($node) {
-    const properties = ['font-family', 'font-size', 'text-align', 'list-style-type', 'line-height'];
+    const properties = ['font-family', 'font-size', 'text-align', 'list-style-type', 'line-height', 'background-color',
+    'height', 'background-image', 'background-image', 'color', 'box-shadow', 'border-radius', 'text-decoration',
+    'padding', 'display', 'background-size', 'background-repeat'];
     const styleInfo = this.jQueryCSS($node, properties) || {};
 
     const fontSize = $node[0].style.fontSize || styleInfo['font-size'];

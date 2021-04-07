@@ -197,6 +197,7 @@ export default class Editor {
       const isNewWindow = linkInfo.isNewWindow;
       const checkProtocol = linkInfo.checkProtocol;
       let rng = linkInfo.range || this.getLastRange();
+      const currentStyle = this.style.current(rng);
       const additionalTextLength = linkText.length - rng.toString().length;
       if (additionalTextLength > 0 && this.isLimited(additionalTextLength)) {
         return;
@@ -219,7 +220,11 @@ export default class Editor {
       let anchors = [];
       if (isTextChanged) {
         rng = rng.deleteContents();
-        const anchor = rng.insertNode($('<A>' + linkText + '</A>')[0]);
+        const newNode = $('<A>' + linkText + '</A>')[0];
+        for (let [key, value] of Object.entries(currentStyle)) {
+          $(newNode).css(key, value);
+        }        
+        const anchor = rng.insertNode(newNode);
         anchors.push(anchor);
       } else {
         anchors = this.style.styleNodes(rng, {

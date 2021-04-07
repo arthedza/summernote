@@ -102,6 +102,5 @@
     "webpack-cli": "^4.5.0",
     "webpack-dev-server": "^3.10.3",
     "zip-webpack-plugin": "^4.0.1"
-  },
-  "dependencies": {}
+  }
 }
