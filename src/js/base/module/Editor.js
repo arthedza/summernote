@@ -219,11 +219,12 @@ export default class Editor {
 
       let anchors = [];
       if (isTextChanged) {
-        rng = rng.deleteContents();
+        // rng = rng.deleteContents();
+        // rng = this.createRange();
         const newNode = $('<A>' + linkText + '</A>')[0];
         for (let [key, value] of Object.entries(currentStyle)) {
           $(newNode).css(key, value);
-        }        
+        }
         const anchor = rng.insertNode(newNode);
         anchors.push(anchor);
       } else {

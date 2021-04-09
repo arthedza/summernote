@@ -7,7 +7,7 @@
  * Copyright 2013- Alan Hong and other contributors
  * Summernote may be freely distributed under the MIT license.
  *
- * Date: 2021-04-07T15:09Z
+ * Date: 2021-04-09T07:14Z
  *
  */
 (function webpackUniversalModuleDefinition(root, factory) {
@@ -6006,7 +6006,8 @@ var Editor = /*#__PURE__*/function () {
       var anchors = [];
 
       if (isTextChanged) {
-        rng = rng.deleteContents();
+        // rng = rng.deleteContents();
+        // rng = this.createRange();
         var newNode = external_root_jQuery_commonjs2_jquery_commonjs_jquery_amd_jquery_default()('<A>' + linkText + '</A>')[0];
 
         for (var _i = 0, _Object$entries = Object.entries(currentStyle); _i < _Object$entries.length; _i++) {
